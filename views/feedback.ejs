@@ -64,15 +64,16 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="/employee">
                     <i class="fas fa-fw fa-user"></i>
                     <span>Quản lý nhân viên</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/feedback">
-                    <i class="fas fa-fw fa-message"></i>
+                    <i class="fas fa-fw fa-user"></i>
                     <span>Phản hồi khách hàng</span></a>
             </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -295,11 +296,52 @@
                     <!-- Content Row -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h1 class="h3 mb-0 text-gray-800">Đang phát triển</h1>
+                            <h1 class="h3 mb-0 text-gray-800">Phản hồi khách hàng</h1>
 
                             <!-- <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6> -->
                         </div>
-                        
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0"
+                                    style="color: #333;">
+                                    <thead>
+                                        <tr>
+                                            <th>STT</th>
+                                            <th>Họ và tên</th>
+                                            <th>Email</th>
+                                            <th>Tin nhắn</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <th>STT</th>
+                                        <th>Họ và tên</th>
+                                        <th>Email</th>
+                                        <th>Tin nhắn</th>
+                                    </tfoot>
+                                    <tbody>
+                                        <% let index=1; %>
+                                            <% feedback.forEach(element=> { %>
+                                                <tr>
+                                                    <td>
+                                                        <%= index %>
+                                                    </td>
+                                                    <td>
+                                                        <%= element.name %>
+                                                    </td>
+                                                    <td>
+                                                        <%= element.email %>
+                                                    </td>
+                                                    <td>
+                                                        <%= element.message %>
+                                                    </td>
+                                                </tr>
+                                                <% index++; %>
+                                                    <% }) %>
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
                     </div>
 
 
@@ -349,7 +391,9 @@
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-    
+    <script>
+        let table = new DataTable('#dataTable');
+    </script>
 </body>
 
 </html>

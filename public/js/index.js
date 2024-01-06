@@ -33,7 +33,6 @@ $(function () {
 
     })
     $("#login").on('click', () => {
-
         let data_login = {
             'email': $("#email-login").val(),
             'password': $("#password-login").val(),
@@ -58,6 +57,35 @@ $(function () {
                     }
                 });
 
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+    })
+    $("#submit-feedback").on('click', () => {
+        let data_feedback = {
+            'email': $("#email-feedback").val(),
+            'name': $("#name-feedback").val(),
+            'message': $("#message-feedback").val(),
+        }
+        fetch('/saveFeedback', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data_feedback)
+        })
+            .then(response => response.json())
+            .then(data => {
+                Swal.fire({
+                    title: "Cảm ơn bạn đã phản hồi",
+                    icon: "success",
+                    confirmButtonText: "OK bro"
+                })
+                $("#email-feedback").val('')
+                $("#name-feedback").val('')
+                $("#message-feedback").val('')
             })
             .catch(error => {
                 console.error('Error:', error);

@@ -9,7 +9,8 @@ var logger = require('morgan');
 var app = express();
 const data_appoint = JSON.parse(fs.readFileSync('./json/appoint.json', 'utf8'));
 const data_service = JSON.parse(fs.readFileSync('./json/service.json', 'utf8'));
-console.log(data_service);
+const data_feedback = JSON.parse(fs.readFileSync('./json/feedback.json', 'utf8'));
+console.log(data_feedback);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -34,6 +35,9 @@ app.get('/employee', function (req, res, next) {
 app.get('/appointment', function (req, res, next) {
     res.render('appointment', { appointment: data_appoint });
 });
+app.get('/feedback', function (req, res, next) {
+    res.render('feedback', { feedback: data_feedback });
+});
 app.post('/saveAppointment', (req, res) => {
     let id = 1
     if (data_appoint.length > 0) {
@@ -45,7 +49,17 @@ app.post('/saveAppointment', (req, res) => {
     fs.writeFileSync('./json/appoint.json', JSON.stringify(data_appoint));
     res.send({ status: 'success' });
 });
-console.log(data_appoint);
+app.post('/saveFeedback', (req, res) => {
+    let id = 1
+    if (data_feedback.length > 0) {
+        id = parseInt(data_feedback[data_feedback.length - 1]['id']) + 1;
+    }
+    let data = req.body;
+    data['id'] = id
+    data_feedback.push(data);
+    fs.writeFileSync('./json/feedback.json', JSON.stringify(data_feedback));
+    res.send({ status: 'success' });
+});
 
 app.post('/login', (req, res) => {
     res.send({ status: 'success' });
