@@ -1,17 +1,41 @@
 [
     {
-        "name": "Châm cứu"
+        "name": "Chăm sóc - Điều dưỡng",
+        "price": "200.000"
     },
     {
-        "name": "Điện châm"
+        "name": "Thủ thuật - Điều dưỡng",
+        "price": "200.000"
+
     },
     {
-        "name": "Xoa bóp bấm huyệt"
+        "name": "Phục hồi chức năng",
+        "price": "250.000"
+
     },
     {
-        "name": "Kéo giãn cột sống"
+        "name": "Châm cứu bấm huyệt",
+        "price": "250.000"
+
     },
     {
-        "name": "Tập dưỡng sinh"
+        "name": "Xét nghiệm tại nhà",
+        "price": "300.000"
+
+    },
+    {
+        "name": "Xét nghiệm tại nhà",
+        "price": "300.000"
+
+    },
+    {
+        "name": "Khám bệnh tại nhà",
+        "price": "350.000"
+
+    },
+    {
+        "name": "Tiêm vacxin tại nhà",
+        "price": "350.000"
+
     }
 ]

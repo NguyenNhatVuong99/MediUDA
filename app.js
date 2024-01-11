@@ -10,7 +10,9 @@ var app = express();
 const data_appoint = JSON.parse(fs.readFileSync('./json/appoint.json', 'utf8'));
 const data_service = JSON.parse(fs.readFileSync('./json/service.json', 'utf8'));
 const data_feedback = JSON.parse(fs.readFileSync('./json/feedback.json', 'utf8'));
-console.log(data_feedback);
+const data_employee = JSON.parse(fs.readFileSync('./json/employee.json', 'utf8'));
+const data_time = JSON.parse(fs.readFileSync('./json/time.json', 'utf8'));
+console.log(data_time);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -24,7 +26,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/', indexRouter);
 // app.use('/users', usersRouter);
 app.get('/', function (req, res, next) {
-    res.render('index', { service: data_service });
+    res.render('index',
+        {
+            service: data_service,
+            employee: data_employee,
+            time: data_time,
+        });
 });
 app.get('/admin', function (req, res, next) {
     res.render('admin');

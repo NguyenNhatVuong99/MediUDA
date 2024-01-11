@@ -1,12 +1,10 @@
 $(function () {
-    let arr_appoint = ['name', 'email', 'phone', 'datepicker', 'service', 'employee', 'message']
+    let arr_appoint = ['name', 'email', 'phone', 'datepicker', 'timepicker','address', 'service',  'message', 'total']
     $("#submit").on('click', () => {
-
         let data_appoint = {}
         arr_appoint.forEach(key => {
             let value = $(`#${key}`).val();
             data_appoint[key] = value
-            data_appoint['status'] = 'Chưa đến hẹn'
         });
         fetch('/saveAppointment', {
             method: 'POST',
@@ -90,6 +88,10 @@ $(function () {
             .catch(error => {
                 console.error('Error:', error);
             });
-
+    })
+    $("#service").on('change',(event)=>{
+        let price =$('option:selected',event.target).data('price');
+        $("#price-booking").text(`Thành tiền: ${price} đ`)
+        $("#total").val(price)
     })
 })
