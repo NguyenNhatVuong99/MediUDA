@@ -309,34 +309,39 @@
                                             <th>STT</th>
                                             <th>Họ và tên</th>
                                             <th>Email</th>
-                                            <th>Tin nhắn</th>
+                                            <th>Đánh giá</th>
+                                            <th>Nội dung</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <th>STT</th>
                                         <th>Họ và tên</th>
                                         <th>Email</th>
-                                        <th>Tin nhắn</th>
+                                        <th>Đánh giá</th>
+                                        <th>Nội dung</th>
                                     </tfoot>
                                     <tbody>
                                         <% let index=1; %>
-                                            <% feedback.forEach(element=> { %>
-                                                <tr>
+                                        <% for (let i = feedback.length - 1; i >= 0; i--) { %>
+                                            <tr>
                                                     <td>
                                                         <%= index %>
                                                     </td>
                                                     <td>
-                                                        <%= element.name %>
+                                                        <%= feedback[i].name %>
                                                     </td>
                                                     <td>
-                                                        <%= element.email %>
+                                                        <%= feedback[i].email %>
                                                     </td>
                                                     <td>
-                                                        <%= element.message %>
+                                                        <%= feedback[i].contentment %>
+                                                    </td>
+                                                    <td>
+                                                        <%= feedback[i].message %>
                                                     </td>
                                                 </tr>
                                                 <% index++; %>
-                                                    <% }) %>
+                                                    <% } %>
                                     </tbody>
 
                                 </table>

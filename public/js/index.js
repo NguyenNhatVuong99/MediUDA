@@ -24,6 +24,8 @@ $(function () {
                 arr_appoint.forEach(key => {
                     $(`#${key}`).val('');
                 });
+                $("#price-booking").text(`Thành tiền: 0 đ`)
+                $("#total").val('')
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -66,7 +68,9 @@ $(function () {
             'email': $("#email-feedback").val(),
             'name': $("#name-feedback").val(),
             'message': $("#message-feedback").val(),
+            'contentment': $("#contentment-feedback").val(),
         }
+        console.log(data_feedback);
         fetch('/saveFeedback', {
             method: 'POST',
             headers: {

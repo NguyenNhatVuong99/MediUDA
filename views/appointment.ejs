@@ -310,9 +310,9 @@
                                             <th>Họ và tên</th>
                                             <th>Số điện thoại</th>
                                             <th>Dịch vụ</th>
-                                            <th>Nhân viên</th>
                                             <th>Ngày</th>
                                             <th>Mô tả</th>
+                                            <th>Thành tiền</th>
                                             <th>Trạng thái</th>
                                         </tr>
                                     </thead>
@@ -321,9 +321,9 @@
                                         <th>Họ và tên</th>
                                         <th>Số điện thoại</th>
                                         <th>Dịch vụ</th>
-                                        <th>Nhân viên</th>
-                                        <th>Ngày</th>
+                                        <th>Thời gian</th>
                                         <th>Mô tả</th>
+                                        <th>Thành tiền</th>
                                         <th>Trạng thái</th>
                                     </tfoot>
                                     <tbody>
@@ -351,9 +351,12 @@
                                                 <td><%= appointment[i].name %></td>
                                                 <td><%= appointment[i].phone %></td>
                                                 <td><%= appointment[i].service %></td>
-                                                <td><%= appointment[i].employee %></td>
-                                                <td><%= appointment[i].datepicker %></td>
+                                                <td>
+                                                    <%= appointment[i].timepicker %>
+                                                    <%= appointment[i].datepicker %>
+                                                </td>
                                                 <td><%= appointment[i].message %></td>
+                                                <td><%= appointment[i].total %></td>
                                                 <td>
                                                     <% if (formattedDate1 === formattedDate2) { %>
                                                         <span class="badge badge-danger">Đến hẹn</span>

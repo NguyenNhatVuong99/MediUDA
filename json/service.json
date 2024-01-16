@@ -1,41 +1,36 @@
 [
     {
-        "name": "Chăm sóc - Điều dưỡng",
-        "price": "200.000"
-    },
-    {
-        "name": "Thủ thuật - Điều dưỡng",
+        "name": "Châm cứu bấm huyệt theo vùng",
         "price": "200.000"
 
     },
     {
-        "name": "Phục hồi chức năng",
+        "name": "Châm cứu bấm huyệt toàn thân",
         "price": "250.000"
 
     },
     {
-        "name": "Châm cứu bấm huyệt",
+        "name": "Message trị liệu theo vùng",
         "price": "250.000"
 
     },
     {
-        "name": "Xét nghiệm tại nhà",
+        "name": "Message trị liệu toàn thân",
         "price": "300.000"
 
     },
     {
-        "name": "Xét nghiệm tại nhà",
+        "name": "Châm cứu - đèn hồng ngoại",
         "price": "300.000"
 
     },
     {
-        "name": "Khám bệnh tại nhà",
+        "name": "Châm cứu - ngải cứu",
         "price": "350.000"
 
     },
     {
-        "name": "Tiêm vacxin tại nhà",
+        "name": "Châm cứu - điện châm",
         "price": "350.000"
-
     }
 ]
