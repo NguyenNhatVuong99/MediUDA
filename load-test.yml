@@ -1,0 +1,11 @@
+config:
+    target: "http://localhost:8000"
+    phases:
+        - duration: 1
+          arrivalRate: 200
+scenarios:
+    - flow:
+          - get:
+                url: "/api/v1/product/galvalume"
+          - get:
+                url: "/api/v1/product/galvanized"
